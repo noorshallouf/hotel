@@ -38,5 +38,19 @@ class RoomModel extends Model
         ->getResult();
 }
 
+public function store()
+{
+    $roomModel = new RoomModel();
+
+    $roomModel->insert([
+        'room_number' => $this->request->getPost('room_number'),
+        'title' => $this->request->getPost('title'),
+        'description' => $this->request->getPost('description'),
+        'price_per_night' => $this->request->getPost('price_per_night'),
+        'status' => $this->request->getPost('status'),
+    ]);
+
+    return redirect()->to('/dashboard/rooms')->with('success', 'Room added successfully');
+}
 }
 
