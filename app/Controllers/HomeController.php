@@ -1,17 +1,38 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\UserModel;
+
+use App\Models\RoomModel;
+
 class HomeController extends BaseController
 {
-  
+    public function index()
+    {
+        $roomModel = new RoomModel();
 
-public function index()
-{
-    $userModel = new UserModel();
-    $users = $userModel->findAll();
+        // نجيب الغرف المتاحة فقط
+        $rooms = $roomModel
+            ->where('status', 'available')
+            ->findAll(6); // نعرض 6 غرف في الصفحة الرئيسية
 
-    return $this->response->setJSON($users);
-}
+        return view('home', [
+            'rooms' => $rooms
+        ]);
+    }
 
+    // (قادم لاحقًا)
+    public function room($id)
+    {
+        $roomModel = new RoomModel();
+
+        $room = $roomModel->find($id);
+
+        if (!$room) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Room not found');
+        }
+
+        return view('room_details', [
+            'room' => $room
+        ]);
+    }
 }

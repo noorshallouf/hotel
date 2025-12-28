@@ -1,0 +1,1325 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2 {
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex_space {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  border: none;
+  background: none;
+  outline: none;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.primary-btn {
+  padding: 15px 40px;
+  background: #7fc142;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  transition: all 0.3s;
+  min-width: 120px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.primary-btn:hover {
+  background: #6aa838;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(127, 193, 66, 0.3);
+}
+
+.secondary-btn {
+  padding: 15px 40px;
+  background: none;
+  border: 2px solid #7fc142;
+  font-weight: bold;
+  color: #7fc142;
+  border-radius: 5px;
+  transition: all 0.3s;
+  min-width: 120px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.secondary-btn:hover {
+  background: #7fc142;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(127, 193, 66, 0.3);
+}
+
+.container {
+  max-width: 85%;
+  margin: auto;
+}
+
+/*--------header---------*/
+header {
+  height: 10vh;
+  line-height: 10vh;
+  padding: 0 20px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+header img {
+  margin: 20px 0;
+  height: 50px;
+}
+
+header ul {
+  display: inline-block;
+}
+
+header ul li {
+  display: inline-block;
+  text-transform: uppercase;
+  margin: 0 5px;
+}
+
+header ul li a {
+  color: #000;
+  margin: 0 10px;
+  transition: 0.5s;
+  font-weight: 500;
+}
+
+header ul li a:hover {
+  color: #7fc142;
+}
+
+header i {
+  margin: 0 20px;
+  color: #7fc142;
+  cursor: pointer;
+}
+
+header .navlinks span {
+  display: none;
+}
+
+/* تعديل الزرين في الـ header */
+header .navlinks ul li:last-child {
+  margin-left: 10px;
+}
+
+@media only screen and (max-width:768px) {
+  header ul {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #7fc142;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    text-align: center;
+    z-index: 9;
+  }
+
+  header ul li {
+    display: block;
+    margin: 20px 0;
+  }
+
+  header ul li a {
+    color: white;
+    font-size: 18px;
+  }
+
+  header i {
+    color: white;
+  }
+
+  header .navlinks span {
+    color: #7fc142;
+    display: block;
+    cursor: pointer;
+    line-height: 10vh;
+    font-size: 25px;
+  }
+  
+  header .navlinks ul li:last-child {
+    margin-left: 0;
+  }
+}
+
+/*--------home---------*/
+.home {
+  height: 100vh;
+  color: #fff;
+  margin-top: 10vh;
+}
+
+.home img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+}
+
+.home .text {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  right: 5%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+}
+
+.home .text h1 {
+  font-size: 60px;
+  font-family: serif;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.home p {
+  margin: 20px 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.home button {
+  margin-right: 20px;
+}
+
+.owl-nav .owl-prev,
+.owl-nav .owl-next {
+  position: absolute;
+  top: 40%;
+  height: 50px;
+  width: 50px;
+  background: rgba(0, 0, 0, 0.5) !important;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.owl-nav .owl-prev {
+  left: 20px;
+}
+
+.owl-nav .owl-next {
+  right: 20px;
+}
+
+/*--------book---------*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+}
+
+input {
+  outline: none;
+  border: none;
+  width: 100%;
+}
+
+.book {
+  padding: 40px 0;
+  background: #282834;
+  color: #fff;
+}
+
+h1 {
+  font-family: serif;
+}
+
+.book h1 {
+  font-size: 28px;
+}
+
+.book h1 span {
+  color: #7fc142;
+}
+
+.book input {
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.book input:nth-last-child(1) {
+  background: #7fc142;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.book input:nth-last-child(1):hover {
+  background: #6aa838;
+}
+
+/*--------about---------*/
+.left, .right {
+  width: 50%;
+  padding: 30px;
+}
+
+.top {
+  margin-top: 80px;
+}
+
+.mtop {
+  margin-top: 40px;
+}
+
+.heading h1 {
+  font-size: 100px;
+  font-weight: 500;
+  opacity: 0.1;
+  font-family: serif;
+  position: absolute;
+  top: -30px;
+}
+
+.heading h2 {
+  margin: 30px 0;
+  font-size: 45px;
+  font-family: serif;
+  font-weight: 400;
+  color: #282834;
+}
+
+.about .heading h1 {
+  top: 55px;
+}
+
+.about {
+  position: relative;
+}
+
+.about .left {
+  margin-top: 30px;
+}
+
+.about p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/*--------counter---------*/
+.counter {
+  background-image: url("../images/background-1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 30vh;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}
+
+.counter .grid {
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  place-items: center;
+  padding-top: 60px;
+}
+
+.counter h1 {
+  font-size: 50px;
+  color: #7fc142;
+}
+
+.counter hr {
+  width: 50%;
+  margin: 10px auto;
+  background: #7fc142;
+  height: 2px;
+  border: none;
+}
+
+.counter span {
+  font-size: 18px;
+  color: white;
+}
+
+/*--------rooms---------*/
+.rooms {
+  position: relative;
+}
+
+/* تحسين بطاقات الغرف لجعلها متناسقة الارتفاع */
+.rooms .items {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.rooms .items:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.rooms .image {
+  height: 250px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.rooms .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.rooms .items:hover .image img {
+  transform: scale(1.1);
+}
+
+.rooms .text {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: none;
+  padding: 30px;
+  background: white;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.rooms i {
+  font-size: 12px;
+  color: #fbb234;
+  margin: 15px 0;
+  margin-right: 5px;
+}
+
+.rooms p {
+  margin: 20px 0;
+  opacity: 0.7;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.rooms h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #282834;
+  font-weight: 600;
+  line-height: 1.3;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.rooms h3 {
+  font-size: 30px;
+  line-height: 20px;
+  margin-left: 20px;
+  font-weight: 500;
+  color: #7fc142;
+}
+
+.rooms h3 span {
+  font-size: 15px;
+  font-weight: 400;
+  color: #000;
+}
+
+.owl-carousel1 .owl-nav .owl-prev,
+.owl-carousel1 .owl-nav .owl-next {
+  position: absolute;
+  top: -20%;
+  height: 50px;
+  width: 50px;
+  background: #7fc142 !important;
+  border-radius: 50%;
+}
+
+.owl-carousel1 .owl-nav .owl-prev i,
+.owl-carousel1 .owl-nav .owl-next i {
+  color: #fff;
+}
+
+.owl-carousel1 .owl-nav .owl-prev {
+  left: 90%;
+}
+
+.owl-carousel1 .owl-nav .owl-next {
+  right: 0;
+}
+
+/* جعل جميع بطاقات الغرف متساوية الارتفاع في السلايدر */
+.owl-carousel1 .owl-stage {
+  display: flex;
+}
+
+.owl-carousel1 .owl-item {
+  display: flex;
+  height: 100%;
+}
+
+/*--------gallery---------*/
+.gallery {
+  position: relative;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery .img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.gallery .img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(127, 193, 65, 0.86);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  transition: 0.5s;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  text-align: center;
+  color: white;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.gallery span {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  border: 2px solid white;
+  font-size: 20px;
+}
+
+.overlay h3 {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.gallery .items:hover .overlay,
+.gallery .items:hover .img::after {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.gallery .owl-nav .owl-prev {
+  left: 85%;
+}
+
+.gallery .owl-nav .owl-next {
+  right: 5%;
+}
+
+.gallery .owl-nav .owl-next,
+.gallery .owl-nav .owl-prev {
+  top: -40%;
+}
+
+/*--------services---------*/
+.services {
+  position: relative;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+.services .left {
+  padding: 30px 0;
+}
+
+.services .box {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: 0.5s;
+  padding: 20px;
+  border-radius: 10px;
+  background: white;
+}
+
+.services .box .text {
+  padding: 30px 0;
+}
+
+.services i {
+  font-size: 50px;
+  color: #7fc142;
+  transition: 0.5s;
+  margin-bottom: 20px;
+}
+
+.services h3 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 10px;
+  transition: 0.5s;
+  color: #282834;
+}
+
+.services img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.services .box:hover {
+  background: #7fc142;
+  color: #fff;
+  cursor: pointer;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(127, 193, 66, 0.2);
+}
+
+.services .box:hover i,
+.services .box:hover h3 {
+  color: #fff;
+}
+
+/* إزالة زر Spa & Wellness من خدمات البوكس */
+.services .box .service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #7fc142;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: 2px solid #7fc142;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.services .box:hover .service-link {
+  background: white;
+  color: #7fc142;
+  border-color: white;
+}
+
+/*--------Customer---------*/
+.Customer {
+  background-image: url("../images/background-2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 70vh;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}
+
+.Customer .container {
+  max-width: 70%;
+}
+
+.Customer .item {
+  padding: 10% 0;
+}
+
+.Customer i {
+  width: 100px;
+  height: 100px;
+  background: rgba(126, 193, 64, 0.57);
+  line-height: 100px;
+  border-radius: 50%;
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+
+.Customer p {
+  line-height: 30px;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.Customer h3 {
+  margin-top: 20px;
+  color: #7fc142;
+  font-size: 24px;
+}
+
+.Customer span {
+  font-size: 15px;
+  color: #ccc;
+}
+
+.owl-carousel2 .owl-dots {
+  position: absolute;
+  bottom: 70px;
+  left: 46.6%;
+}
+
+.owl-carousel2 .owl-dots i {
+  color: #7fc142;
+}
+
+.owl-carousel2 .owl-dots i:hover button {
+  color: #7fc142 !important;
+}
+
+.owl-carousel2 span {
+  border: 2px solid #fff;
+  background: transparent !important;
+}
+
+.owl-carousel2 .active span {
+  background: #7fc142 !important;
+  border: 2px solid #7fc142;
+}
+
+/*--------news---------*/
+.news {
+  position: relative;
+}
+
+.news i {
+  color: #7fc142;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+.news label {
+  margin-top: 12px;
+  margin-right: 20px;
+  color: #666;
+}
+
+.news .left {
+  padding: 30px 0;
+  width: 65%;
+}
+
+.news .right {
+  width: 35%;
+}
+
+.news img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.news .items p {
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  line-height: 1.6;
+}
+
+.news .box {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 40px 0;
+}
+
+.news .box:nth-child(1) {
+  padding-top: 0;
+}
+
+.news .box:nth-last-child(1) {
+  border-bottom: none;
+}
+
+.news .box img {
+  width: 110px;
+  height: 114px;
+  border-radius: 10px;
+}
+
+.news .stext {
+  padding: 0 0 0 20px;
+}
+
+.news .stext h2 {
+  font-size: 18px;
+  color: #282834;
+  margin-bottom: 10px;
+}
+
+/*--------newsletter---------*/
+.newsletter {
+  position: relative;
+}
+
+.newsletter .container {
+  background: #7fc142;
+  padding: 40px 30px;
+  position: absolute;
+  top: -70px;
+  left: 8%;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.newsletter h1 {
+  width: 100%;
+  font-size: 30px;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.newsletter input {
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.newsletter input:nth-last-child(2) {
+  width: 80%;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.newsletter input:nth-last-child(1) {
+  margin-left: 20px;
+  width: 30%;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: #282834;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.newsletter input:nth-last-child(1):hover {
+  background: #1a1a24;
+}
+
+/*--------footer---------*/
+footer {
+  background: #282834;
+  color: #b6b7b9;
+  padding: 10% 0 5% 0;
+  margin-top: 100px;
+}
+
+footer .grid {
+  grid-template-columns: 6fr 3fr 3fr;
+}
+
+footer p {
+  color: #b6b7b9;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+footer .icon i {
+  margin: 20px 20px 20px 0;
+  color: #b6b7b9;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+footer .icon i:hover {
+  color: #7fc142;
+}
+
+footer h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+footer li {
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+footer li a {
+  color: #b6b7b9;
+  transition: color 0.3s;
+}
+
+footer li:hover {
+  transform: translateX(5px);
+}
+
+footer li a:hover {
+  color: #7fc142;
+}
+
+footer i {
+  color: #7fc142;
+  margin: 20px 0;
+  margin-right: 20px;
+  font-size: 18px;
+}
+
+footer label {
+  margin: 20px 0;
+  display: inline-block;
+  color: #b6b7b9;
+}
+
+.legal {
+  padding: 15px 0;
+  background: #1a1a24;
+  color: #b6b7b9;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+/* استجابة الشاشات الصغيرة */
+@media only screen and (max-width:768px) {
+  .home {
+    height: 50vh;
+  }
+
+  .home img {
+    height: 50vh;
+  }
+
+  .home .text {
+    top: 20%;
+    padding: 20px;
+  }
+
+  .home .text h1 {
+    font-size: 40px;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  .book h1 {
+    margin-bottom: 20px;
+  }
+
+  .container.flex,
+  .book .flex_space {
+    flex-direction: column;
+  }
+
+  .book .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .counter .grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 30px;
+  }
+
+  .owl-carousel .owl-nav .owl-prev {
+    left: 80%;
+  }
+
+  .gallery .owl-nav .owl-prev {
+    left: 75%;
+  }
+
+  .rooms .owl-nav .owl-prev,
+  .rooms .owl-nav .owl-next {
+    top: -30%;
+  }
+
+  .gallery .owl-nav .owl-prev,
+  .gallery .owl-nav .owl-next {
+    top: -80%;
+  }
+
+  .services .flex_space {
+    flex-direction: column;
+  }
+
+  .Customer {
+    height: 60vh;
+  }
+
+  .Customer .container {
+    max-width: 80%;
+  }
+
+  .owl-carousel2 .owl-dots {
+    bottom: 0;
+    left: 44.5%;
+  }
+
+  .news .content.flex {
+    flex-direction: column;
+  }
+
+  .news .left {
+    padding: 30px 0;
+    width: 100%;
+  }
+
+  .news .right {
+    width: 100%;
+  }
+
+  .newsletter {
+    position: relative;
+    background: #7fc142;
+  }
+
+  .newsletter .container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 30px;
+    position: relative;
+  }
+
+  .newsletter .flex_space {
+    flex-direction: column;
+  }
+
+  .newsletter input:nth-last-child(2) {
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .newsletter input:nth-last-child(1) {
+    margin: 0;
+    width: 100%;
+  }
+
+  footer .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  /* تعديلات للاستجابة على الشاشات الصغيرة */
+  .rooms .text h2 {
+    height: auto;
+    min-height: 60px;
+  }
+  
+  .primary-btn, .secondary-btn {
+    min-width: 100px;
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+  
+  header .navlinks ul li {
+    margin: 15px 0;
+  }
+}
+
+/* تنسيقات إضافية للنماذج */
+.modal-slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 300px;
+}
+
+.slider-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+.slider-btn:hover { 
+  background: rgba(0,0,0,0.8); 
+}
+
+.prev { 
+  left: 10px; 
+}
+
+.next { 
+  right: 10px; 
+}
+
+.slide-number {
+  position: absolute;
+  bottom: 10px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* تنسيق زر "اختر هذه الغرفة" */
+#modalSelectRoomBtn {
+  background-color: #7a9c59;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  transition: background 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#modalSelectRoomBtn:hover {
+  background-color: #638246;
+}
+
+/* تنسيق محتوى النافذة المنبثقة */
+.modal-content {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 30px;
+  max-width: 1000px;
+  padding: 30px;
+  align-items: flex-start;
+}
+
+#modalRoomGallery {
+  flex: 1.3;
+}
+
+.room-details-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 800px) {
+  .modal-content {
+      flex-direction: column !important;
+  }
+  #modalRoomGallery {
+      width: 100%;
+  }
+}
+
+/* ========== Service Links ========== */
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #7fc142;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: 2px solid #7fc142;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.service-link:hover {
+  background: #7fc142;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(127, 193, 66, 0.3);
+}
+
+.service-link i {
+  font-size: 14px;
+}
+
+/* ========== Additional Improvements for Room Cards ========== */
+.star-rating {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.star-rating i {
+  color: #fbb234;
+  font-size: 14px;
+  margin-left: 2px;
+}
+
+/* ========== Booking Page Specific Improvements ========== */
+.booking-page-container .room-card {
+  min-height: 450px;
+}
+
+@media (max-width: 480px) {
+  .booking-page-container .room-card {
+    min-height: 400px;
+  }
+}
+
+/* ========== Top Navigation for Booking Page ========== */
+.top-navigation {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  background: #7fc142;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(127, 193, 66, 0.3);
+}
+
+.nav-btn.signin {
+  background: transparent;
+  color: #7fc142;
+  border: 2px solid #7fc142;
+}
+
+.nav-btn.signin:hover {
+  background: #7fc142;
+  color: white;
+}
+
+/* ========== Room Cards Consistency Fix ========== */
+.rooms .owl-item {
+  display: flex;
+  height: auto;
+}
+
+.rooms .items {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.rooms .image {
+  flex-shrink: 0;
+  height: 250px;
+}
+
+.rooms .text {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.rooms .text h2 {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rooms .text p {
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+/* ========== Button Styles Consistency ========== */
+.primary-btn, .secondary-btn {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ========== Responsive Design Improvements ========== */
+@media (max-width: 768px) {
+  .rooms .text h2 {
+    font-size: 20px;
+    min-height: 50px;
+  }
+  
+  .rooms .image {
+    height: 200px;
+  }
+}
+
+/* ========== Color Consistency ========== */
+:root {
+  --primary-color: #7fc142;
+  --primary-dark: #6aa838;
+  --primary-darker: #5a8c31;
+  --dark-color: #282834;
+  --dark-darker: #1a1a24;
+  --light-gray: #f7f7f7;
+  --text-gray: #666;
+}

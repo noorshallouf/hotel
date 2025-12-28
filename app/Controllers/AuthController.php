@@ -6,63 +6,49 @@ use App\Models\UserModel;
 
 class AuthController extends BaseController
 {
-    public function register()
-    {
-        return view('auth/register');
-    }
-
-    public function storeRegister()
-    {
-        $rules = [
-            'name'     => 'required|min_length[3]',
-            'email'    => 'required|valid_email|is_unique[users.email]',
-            'password' => 'required|min_length[6]',
-            'phone'    => 'required'
-        ];
-
-        if (! $this->validate($rules)) {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
-        }
-
-        $userModel = new UserModel();
-
-        $userModel->insert([
-            'name'     => $this->request->getPost('name'),
-            'email'    => $this->request->getPost('email'),
-            'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
-            'phone'    => $this->request->getPost('phone'),
-            'role'     => 'user'
-        ]);
-
-        return redirect()->to('/login');
-    }
-
+    // عرض صفحة login
     public function login()
     {
         return view('auth/login');
     }
 
+    // معالجة تسجيل الدخول
     public function storeLogin()
     {
-        $userModel = new UserModel();
-        $user = $userModel->where('email', $this->request->getPost('email'))->first();
+        $email    = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
 
-        if (! $user || ! password_verify($this->request->getPost('password'), $user['password'])) {
+        if (!$email || !$password) {
+            return redirect()->back()->with('error', 'البيانات ناقصة');
+        }
+
+        $userModel = new UserModel();
+        $user = $userModel->where('email', $email)->first();
+
+        if (!$user || !password_verify($password, $user['password'])) {
             return redirect()->back()->with('error', 'بيانات الدخول غير صحيحة');
         }
 
+        // ⭐ هذا أهم سطر في المشروع كله
         session()->set([
-            'user_id' => $user['id'],
-            'role'    => $user['role'],
-            'isLoggedIn' => true
+            'isLoggedIn' => true,
+            'user_id'    => $user['id'],
+            'email'      => $user['email'],
+            'role'       => $user['role'], // admin أو user
         ]);
+
+        // تحويل حسب الدور
+        if ($user['role'] === 'admin') {
+            return redirect()->to('/dashboard');
+        }
 
         return redirect()->to('/');
     }
 
+    // Logout
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/login');
+        return redirect()->to('/');
     }
 }
